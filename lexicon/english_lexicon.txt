@@ -1,0 +1,100 @@
+# determiner phrases
+john   : dp - j
+mary   : dp - m
+beans  : dp - b
+ann    : dp - a
+jazz   : dp - jazz
+they   : dp - they
+
+# common nouns
+girl  : n - girl
+man   : n - man
+heart : n - heart
+book  : n - book
+
+# simple determiners
+the : dp/n - the
+
+# intransitive verbs
+left    : dp\s - left
+snores  : dp\s - snore
+snored  : dp\s - snore
+leave   : dp\s - leave
+
+# transitive verbs
+saw       : (dp\s)/dp - see
+see       : (dp\s)/dp - see
+like     : (dp\s)/dp - like
+likes     : (dp\s)/dp - like
+liked     : (dp\s)/dp - like
+dislikes  : (dp\s)/dp - dislike
+hit       : (dp\s)/dp - hit
+hates     : (dp\s)/dp - hates
+wants     : (dp\s)/dp - wants
+read      : (dp\s)/dp - read
+
+# ditransitive verbs
+gave    : ((dp\s)/dp)/dp - gave
+gave    : ((dp\s)/pp)/dp - gave
+
+# verbs with sentential complement
+knowsthat   : (dp\s)/s   - knows
+saidthat    : (dp\s)/s   - said
+wants       : (dp\s)/inf - wants
+
+# infinitival to
+to : (dp\inf)/(dp\s) - LP.P
+
+# quantifier phrases
+everyone   : s/(dp\s) - everyone
+someone    : s/(dp\s) - someone
+# anyone currently does not work as desired
+anyone     : s/(dp\s) - someone
+nothing    : s/(dp\s) - nothing
+something  : s/(dp\s) - something
+
+# quantifying determiners
+every  : (s/(dp\s))/n - every
+a      : (s/(dp\s))/n - a
+
+# conjunctions
+and  : ((s/(dp\s))\(s/(dp\s)))/(s/(dp\s)) - and
+and  : (dp\dp)/dp                         - and
+and  : (s\s)/s                            - and
+but  : ((s/dp)\(s/dp))/(s/dp)             - but
+but  : (s\s)/s                            - but
+
+# adverbs
+faintly : (dp\s)\(dp\s) - faintly
+softly  : (dp\s)\(dp\s) - softly
+
+# in-situ wh-words
+WHO : q/(dp\s) - who
+who : q/(dp\s) - who
+
+# prepositions
+to : pp/dp - Lx.x
+back : pp/pp - back
+back : pp - back
+
+# same
+same : (dp\s)/((n/n)\(dp\s)) - same
+
+# negation
+# type not fully confirmed
+didn't : (dp\s)/(dp\s) - LP.~P
+didn't : s/s - LP.~P
+
+# passive
+# this WAS is for use with passive, figure out semantics
+WAS : (dp\s)/((dp\s)/dp) - LP.Lx.someone(P(x))
+
+# movement
+_ : (dp\s)/(dp\s) - Lx.x
+
+does : dp/dp - Lx.x
+did  : dp/dp - Lx.x
+
+# relative clauses
+who : (dp\dp)/(dp\s) - who
+who : (s/((dp\dp)\s))/(dp\s) - who

@@ -1,0 +1,63 @@
+This list is a file to store possible sentences that can be run through the parser.
+english_sentences.txt is kept shorter to save parsing time
+
+john saw mary
+everyone left
+everyone and john left
+john and every girl left
+john snored and every girl left
+
+john knowsthat every girl left
+john saidthat mary snores faintly
+john knowsthat mary saw everyone
+john saidthat mary hit everyone softly
+
+mary liked but john disliked beans
+
+in-situ questions:
+john saw WHO?
+WHO saw john?
+
+ditransitives:
+john gave mary a heart
+mary gave the heart back to john
+john gave mary a heart but mary gave the heart back (warning: takes a long time)
+everyone gave nothing to someone
+someone gave something to everyone
+
+parasitic scope:
+the same man saw everyone
+everyone read the same book
+
+negation:
+john didn't leave
+everyone didn't leave
+john didn't see everyone
+
+wh-questions:
+who does john like _?
+john like WHO?
+who _ likes john?
+
+mary who john saw _ left
+
+
+lexicon storage:
+
+everyone   : s/(dp\s) - LP.[Ax.person(x)>P(x)]
+someone    : s/(dp\s) - LP.[Ex.P(x)&person(x)]
+nothing    : s/(dp\s) - LP.[~Ax.thing(x)>P(x)]
+something  : s/(dp\s) - LP.[Ex.P(x)&thing(x)]
+
+every  : (s/(dp\s))/n - LP.LQ.[Ax.P(x)>Q(x)]
+a      : (s/(dp\s))/n - LP.LQ.[Ex.P(x)&Q(x)]
+
+didn't : (dp\s)/(dp\s) - LP.~P
+didn't : s/s - LP.~P
+
+
+note:
+
+to-do: figure out how to denote the scope of lambda expressions (using brackets?) without ruining the
+lambda calculus for denotations
+and that way you can properly calculate denotations of someone didn't see everyone

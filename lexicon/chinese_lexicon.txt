@@ -1,0 +1,13 @@
+小李 : dp - l
+小明 : dp - m
+
+走了 : dp\s - left
+
+看   : (dp\s)/dp - watch
+吃   : (dp\s)/dp - eat
+
+電視  : n - tv
+蘋果  : n - apple
+
+那個 : dp/n - that
+這個 : dp/n - this

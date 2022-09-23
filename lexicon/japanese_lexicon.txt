@@ -1,0 +1,40 @@
+ジョン : dp - j
+メアリー : dp - m
+私 : dp - i
+
+ピザ : n - pizza
+
+出た : dp\s - left
+
+見た : dp\(dp\s) - saw
+食べた : dp\(dp\s) - ate
+
+が : dp\dp - nom
+を : dp\dp - acc
+の : (dp\dp)/n - Lx.x
+
+誰か : s/(dp\s) - someone
+
+誰 : q/(dp\s) - who
+
+
+
+
+jon     : dp - j
+mearii  : dp - m
+watashi : dp - i
+
+piza : n - pizza
+
+deta : dp\s - left
+
+mita   : dp\(dp\s) - saw
+tabeta : dp\(dp\s) - ate
+
+ga : dp\dp - nom
+wo : dp\dp - acc
+no : (dp\dp)/n - Lx.x
+
+dareka : s/(dp\s) - someone
+
+dare : q/(dp\s) - who
